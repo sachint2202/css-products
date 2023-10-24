@@ -27,7 +27,7 @@ jobs:
       - name: Build 🏗️
         run: |
           cd css-product
-          ng build
+          npm build
       - name: Deploy to GH Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
