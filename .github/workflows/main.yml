@@ -6,7 +6,7 @@ name: Build and deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -20,7 +20,9 @@ jobs:
           submodules: true # TODO remove this if not using submodules in Hexo
 
       - name: Install 🔧
-        run: yarn install
+        run: |
+          cd css-product
+          yarn install
 
       - name: Build 🏗️
         run: |
