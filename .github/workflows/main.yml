@@ -1,7 +1,7 @@
 # Created by MichaelCurrin
 # https://gist.github.com/MichaelCurrin/a698731096f78240f653faf9a9127cba
 
-name: Build and deploy
+name: Build and move to gh-pages branch
 
 on:
   push:
@@ -33,3 +33,7 @@ jobs:
         with:
           github_token: ${{ secrets.PAT_TOKEN_CSS }}
           publish_dir: css-product/dist
+
+          # github_token credential don't have enough access to create gh-pages branch
+          # So to resolve that, create a PAT with access to specific repo's branch creation
+          # permission
